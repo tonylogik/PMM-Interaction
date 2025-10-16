@@ -28,6 +28,21 @@ In the side YAML file, specify the material properties, the locations of the cor
 ![image](https://github.com/user-attachments/assets/505bce60-5b32-49e9-8d23-2e41a319ca10)
 
 
+## Next.js Companion App
+
+For a web-native experience of the same calculations, this repository now includes a fully typed Next.js application inside `next-pmm-app/`. The app mirrors the Python algorithm using mathjs/turf/plotly equivalents, reads the same YAML payload, and renders the 3D and 2D interaction plots in the browser.
+
+### Getting Started
+
+```bash
+cd next-pmm-app
+npm install
+npm run dev
+```
+
+Point your browser to <http://localhost:3000>, load `sectionData.yaml`, and click **Compute interaction magic** to generate plots and console-print the P-range.
+
+
 
 
 
