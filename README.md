@@ -28,6 +28,59 @@ In the side YAML file, specify the material properties, the locations of the cor
 ![image](https://github.com/user-attachments/assets/505bce60-5b32-49e9-8d23-2e41a319ca10)
 
 
+## Next.js Companion App
+
+For a web-native experience of the same calculations, this repository now includes a fully typed Next.js application inside `next-pmm-app/`. The app mirrors the Python algorithm using mathjs/turf/plotly equivalents, reads the same YAML payload, and renders the 3D and 2D interaction plots in the browser.
+
+### Getting Started
+
+```bash
+cd next-pmm-app
+npm install
+npm run dev
+```
+
+Point your browser to <http://localhost:3000>, load `sectionData.yaml`, and click **Compute interaction magic** to generate plots and console-print the P-range.
+
+### Downloading the Source Code
+
+If you want to grab the full project (Python script **and** Next.js companion app) for your own machine, you have a couple of easy options:
+
+1. **Clone with Git** – recommended when you plan to contribute or keep the repo updated.
+
+   ```bash
+   git clone https://github.com/<your-org-or-user>/PMM-Interaction.git
+   cd PMM-Interaction
+   ```
+
+   Replace `<your-org-or-user>` with the GitHub owner shown in your browser; the default branch already contains both the Python code and the `next-pmm-app/` directory.
+
+2. **Download a ZIP archive** – perfect for a quick, one-off inspection.
+
+   - Visit the repository in your browser.
+   - Click the green **Code** button near the top-right.
+   - Choose **Download ZIP** and unzip it locally.
+
+Either approach gives you the same directory layout seen above, so you can immediately run the Python script or `npm install && npm run dev` inside `next-pmm-app/`.
+
+### Pushing the Next.js app to a different repository
+
+Need the browser UI to live in its own Git home? Use the helper script below to copy just the Next.js project into a fresh directory, then wire up whatever remote you prefer:
+
+```bash
+# from the repo root
+./scripts/export-next-app.sh /tmp/pmm-next-standalone
+cd /tmp/pmm-next-standalone
+git init
+git remote add origin git@github.com:you/pmm-next.git
+git add .
+git commit -m "Initial import of PMM Next.js app"
+git push -u origin main
+```
+
+The exporter skips transient folders like `node_modules/` and `.next/`, so you get a clean working tree ready for `npm install` and your first push.
+
+
 
 
 

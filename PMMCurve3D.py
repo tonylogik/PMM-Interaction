@@ -339,7 +339,7 @@ def Scatter3D(data, dataIn):
     fig.update_layout(
         scene=dict(
             xaxis = dict(
-                title = 'Mx (kips-in)',
+                title = 'Mx (kips-ft)',
                 showgrid=True,
                 gridcolor='gray',
                 gridwidth=2,
@@ -350,7 +350,7 @@ def Scatter3D(data, dataIn):
                 )
             ),
             yaxis = dict(
-                title = 'My (kips-in)',
+                title = 'My (kips-ft)',
                 showgrid=True,
                 gridcolor='gray',
                 gridwidth=2,
@@ -406,12 +406,12 @@ def Scatter2D(data, dataIn):
         if i == 0 or i == 2:
             axs[i, 0].plot(data[alpha_list[k[i]]][2], data[alpha_list[k[i]]][0])  
             axs[i, 0].set_title(f"P vs My, teta = {np.round(alpha_list[k[i]]*180/np.pi,1)} (Deg)", fontdict = font1)
-            axs[i, 0].set_xlabel('Design Moment - My (kips-in)', fontdict = font2)
+            axs[i, 0].set_xlabel('Design Moment - My (kips-ft)', fontdict = font2)
             axs[i, 0].set_ylabel('Axial Load (kips)', fontdict = font2)
         else:
             axs[i, 0].plot(data[alpha_list[k[i]]][1], data[alpha_list[k[i]]][0])
             axs[i, 0].set_title(f"P vs Mx, teta = {np.round(alpha_list[k[i]]*180/np.pi,1)} (Deg)", fontdict = font1)
-            axs[i, 0].set_xlabel('Design Moment - Mx (kips-in)', fontdict = font2)
+            axs[i, 0].set_xlabel('Design Moment - Mx (kips-ft)', fontdict = font2)
             axs[i, 0].set_ylabel('Axial Load (kips)', fontdict = font2)
 
         axs[i, 1].plot(data[alpha_list[k[i]]][3], data[alpha_list[k[i]]][0])  
@@ -575,8 +575,8 @@ def calculate_pmm_interaction(data):
                         sci = 'TZ'
 
                     design_P = phi * Pn
-                    design_Mx = phi * Mnx
-                    design_My = phi * Mny
+                    design_Mx = phi * Mnx / 12
+                    design_My = phi * Mny / 12
 
                     P_list.append(np.round(design_P,2))
                     Mx_list.append(np.round(design_Mx,2))
