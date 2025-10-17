@@ -42,6 +42,27 @@ npm run dev
 
 Point your browser to <http://localhost:3000>, load `sectionData.yaml`, and click **Compute interaction magic** to generate plots and console-print the P-range.
 
+### Downloading the Source Code
+
+If you want to grab the full project (Python script **and** Next.js companion app) for your own machine, you have a couple of easy options:
+
+1. **Clone with Git** – recommended when you plan to contribute or keep the repo updated.
+
+   ```bash
+   git clone https://github.com/<your-org-or-user>/PMM-Interaction.git
+   cd PMM-Interaction
+   ```
+
+   Replace `<your-org-or-user>` with the GitHub owner shown in your browser; the default branch already contains both the Python code and the `next-pmm-app/` directory.
+
+2. **Download a ZIP archive** – perfect for a quick, one-off inspection.
+
+   - Visit the repository in your browser.
+   - Click the green **Code** button near the top-right.
+   - Choose **Download ZIP** and unzip it locally.
+
+Either approach gives you the same directory layout seen above, so you can immediately run the Python script or `npm install && npm run dev` inside `next-pmm-app/`.
+
 
 
 
