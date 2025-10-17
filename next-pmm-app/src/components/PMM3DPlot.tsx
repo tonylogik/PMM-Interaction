@@ -61,14 +61,14 @@ export function PMM3DPlot({ result }: PMM3DPlotProps) {
       'P-M-M Interaction Curve (ACI 318-19), Reinforced Concrete Section — now rendered in glorious web shaders',
     scene: {
       xaxis: {
-        title: 'Mx (kips-in)',
+        title: 'Mx (kips-ft)',
         showgrid: true,
         gridcolor: 'gray',
         gridwidth: 2,
         titlefont: { family: 'Courier New', size: 24, color: 'black' }
       },
       yaxis: {
-        title: 'My (kips-in)',
+        title: 'My (kips-ft)',
         showgrid: true,
         gridcolor: 'gray',
         gridwidth: 2,

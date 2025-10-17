@@ -58,7 +58,7 @@ export function PMM2DPlots({ result }: PMM2DPlotsProps) {
       } as Layout['yaxis'];
     };
 
-    const firstColumnTitle = row === 0 || row === 2 ? 'Design Moment - My (kips-in)' : 'Design Moment - Mx (kips-in)';
+    const firstColumnTitle = row === 0 || row === 2 ? 'Design Moment - My (kips-ft)' : 'Design Moment - Mx (kips-ft)';
     registerAxis(row, 0, firstColumnTitle, 'Axial Load (kips)');
     registerAxis(row, 1, 'Neutral Axis Depth - c (in)', 'Axial Load (kips)');
     registerAxis(row, 2, 'Maximum Tensile Strain - epsilon-t', 'Axial Load (kips)');

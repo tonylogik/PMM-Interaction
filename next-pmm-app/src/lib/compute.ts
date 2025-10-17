@@ -205,8 +205,8 @@ export function calculatePMMInteraction(data: SectionData, geometry: ComputedGeo
         const sectionClass: SectionClassification = epsilonTMax >= -epsilonY ? 'CC' : epsilonTMax <= -epsilonY ? 'TC' : 'TZ';
 
         const designP = phi * Pn;
-        const designMx = phi * Mnx;
-        const designMy = phi * Mny;
+        const designMx = (phi * Mnx) / 12;
+        const designMy = (phi * Mny) / 12;
 
         PList.push(Number(designP.toFixed(2)));
         MxList.push(Number(designMx.toFixed(2)));
