@@ -63,6 +63,23 @@ If you want to grab the full project (Python script **and** Next.js companion ap
 
 Either approach gives you the same directory layout seen above, so you can immediately run the Python script or `npm install && npm run dev` inside `next-pmm-app/`.
 
+### Pushing the Next.js app to a different repository
+
+Need the browser UI to live in its own Git home? Use the helper script below to copy just the Next.js project into a fresh directory, then wire up whatever remote you prefer:
+
+```bash
+# from the repo root
+./scripts/export-next-app.sh /tmp/pmm-next-standalone
+cd /tmp/pmm-next-standalone
+git init
+git remote add origin git@github.com:you/pmm-next.git
+git add .
+git commit -m "Initial import of PMM Next.js app"
+git push -u origin main
+```
+
+The exporter skips transient folders like `node_modules/` and `.next/`, so you get a clean working tree ready for `npm install` and your first push.
+
 
 
 
